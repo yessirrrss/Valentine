@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<title>Sylvia ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdde5, #fff);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+}
+button {
+  font-size: 18px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+}
+#yes { background: #ff4d6d; color: white; }
+#no { background: #ccc; position: absolute; }
+</style>
+</head>
+<body>
+
+<div class="card" id="question">
+  <h1>Sylvia, vil du være min Valentine? ❤️</h1>
+  <button id="yes" onclick="sayYes()">Ja 💖</button>
+  <button id="no" onmouseover="moveNo()">Nei</button>
+</div>
+
+<div class="card" id="answer" style="display:none;">
+  <p>
+    Tusen takk for at du sa ja til å være min Valentine, Sylvia. ❤️<br><br>
+    Jeg er så utrolig takknemlig for tiden vi har hatt sammen – for alt vi har delt,
+    alt vi har gått gjennom, og alt vi har klart side om side.<br><br>
+    Jeg gleder meg så mye til den dagen vi flytter sammen igjen på ordentlig,
+    og til å bygge hverdagen vår – sammen.<br><br>
+    Du betyr mer for meg enn ord kan forklare.
+  </p>
+  <h3>God Valentinsdag ❤️</h3>
+</div>
+
+<audio id="music" src="music/ordinary.mp3"></audio>
+
+<script>
+function sayYes() {
+  document.getElementById('question').style.display = 'none';
+  document.getElementById('answer').style.display = 'block';
+  document.getElementById('music').play();
+}
+function moveNo() {
+  const no = document.getElementById('no');
+  no.style.left = Math.random()*250 + 'px';
+  no.style.top = Math.random()*150 + 'px';
+}
+</script>
+
+</body>
+</html>
