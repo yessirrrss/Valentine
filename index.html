@@ -57,18 +57,24 @@ button {
   <h3>God Valentinsdag ❤️</h3>
 </div>
 
-<audio id="music" src="music/Ordanery.mp3"></audio>
-
 <script>
+let music;
+
 function sayYes() {
   document.getElementById('question').style.display = 'none';
   document.getElementById('answer').style.display = 'block';
-  document.getElementById('music').play();
+
+  if (!music) {
+    music = new Audio("music/Ordinary.mp3");
+    music.volume = 0.7;
+  }
+  music.play().catch(err => console.log(err));
 }
+
 function moveNo() {
   const no = document.getElementById('no');
-  no.style.left = Math.random()*250 + 'px';
-  no.style.top = Math.random()*150 + 'px';
+  no.style.left = Math.random() * 250 + 'px';
+  no.style.top = Math.random() * 150 + 'px';
 }
 </script>
 
